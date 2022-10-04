@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css')}}">
+    <script src="{{url_for('static', filename='css/layout.js') }}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Formulario</h1>
+        <h2 id="descripcion">Por favor ingrese todos los datos necesarios en el formulario</h2>
+    </header>
+    <form id="formularioAct" action="{{url_for('hello')}}" method="post">
+        <div class="inputText">
+            <label for="name" id="name-label">Name <br>
+              <input type="text" name = "name" id="name" placeholder="Ingresar nombres y apellidos" required>
+            </label>
+            <br><br>
+            <label for="date" id="date-label">Fecha de nacimiento <br>
+              <input type="date" name="fechaSN" id="date" required>
+            </label>
+            <br><br>
+            <label for="ocupacion" id="ocupacion-label">Ocupacion <br>
+              <input type="text" name="ocupacion" id="ocupacion" placeholder="Ingresar ocupacion" required>
+            </label>
+            <br><br>
+            <label for="email" id="email-label">Contacto <br>
+              <input type="email" name="contacto" id="email" placeholder="Ingresar Email o Telefono" required>
+            </label>
+            <br>
+        </div>
+        <br>
+        <label for="dropdown">Nacionalidad<br>
+            <select name="nacionalidad" id="dropdown">
+                <option disabled="" value="SelectRo" selected>Seleccione una nacionalidad</option>
+                <option>Argentina</option>
+                <option>Bolivia</option>
+                <option>Brasil</option>
+                <option>Chile</option>
+                <option>Colombia</option>
+                <option>Ecuador</option>
+                <option>Guyana</option>
+                <option>Guyana Francesa</option>
+                <option>Paraguay</option>
+                <option>Peru</option>
+                <option>Suriname</option>
+                <option>Uruguay</option>
+                <option>Venezuela</option>
+            </select>
+        </label>
+        <br><br>
+        <label for="">Nivel de ingles<br>
+            <label for="Definy"><input type="radio" name="nivelIngl" id="Definy" name="DeRadio" checked>Fluido</button><br></label>
+            <label for="Maybe"><input type="radio" name="nivelIngl" id="Maybe" name="DeRadio">Avanzado</button><br></label>
+            <label for="Not-Sure"><input type="radio" name="nivelIngl" id="Not-Sure" name="DeRadio">Intermedio</button><br></label>
+        </label><br>
+        <label for="lengProg">¿Que lenguaje de programacion domina?</label>
+        <br><br>
+        <select name="lengProg" id="lProgramacion" multiple>
+          <option value="C++">C++</option>
+          <option value="C">C</option>
+          <option value="C#">C#</option>
+          <option value="Python">Python</option>
+          <option value="Go">Go</option>
+          <option value="Rust">Rust</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Lua">Lua</option>
+          <option value="Bash">BashScript</option>
+          <option value="Java">Java</option>
+        </select>
+        <br><br>
+        <label for="aptitud">Aptitudes:</label>
+        <input list="aptList" id="aptitudes" name="aptitud" />
+        <datalist id="aptList">
+          <option value="Inteligencia Emocional"></option>
+          <option value="Creatividad"></option>
+          <option value="Iniciativa"></option>
+          <option value="Trabajo en equipo"></option>
+          <option value="Resolucion de problemas complejos"></option>
+          <option value="Capacidad de liderazgo"></option>
+        </datalist>
+        <br><br>
+
+        <label for="">¿Que lenguajes de programacion domina?<br>
+          <input type="checkbox" name="habilidad" id="" value="">Sentido de la responsibilidad<br>
+          <input type="checkbox" name="habilidad" id="" value="">Confianza<br>
+          <input type="checkbox" name="habilidad" id="" value="">Capacidad de trabajar en equipo<br>
+          <input type="checkbox" name="habilidad" id="" value="">Sentido de las relaciones con los clientes<br>
+          <input type="checkbox" name="habilidad" id="" value="">Iniciativa<br>
+          <input type="checkbox" name="habilidad" id="" value="">Creatividad<br>
+          <input type="checkbox" name="habilidad" id="" value="">Gestion del estres y presion<br>
+          <input type="checkbox" name="habilidad" id="" value="">Capacidad de analisis<br>
+      </label>
+      <br>
+        <label for="">Perfil</label>
+        <br>
+        <textarea name="perfil" id="" cols="30" rows="10" placeholder="Escriba algo que quiera añadir a su perfil ..."></textarea>
+        <br>
+        <button type="submit" id="submit">Registrar</button>
+    </form>
+</body>
+</html>
